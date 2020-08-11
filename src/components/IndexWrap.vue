@@ -4,13 +4,15 @@
       <van-col span="6">
         <img class="logo" src="../assets/img/logo-img.png">
       </van-col>
-      <van-col span="15" class="search-div">
+      <van-col
+          span="15"
+          class="search-div"
+          @click="searchBtnFn">
         <van-icon name="search" size=".5rem"></van-icon>
         <span>请输入用户名</span>
       </van-col>
       <van-col span="3">
         <van-button class="loginBtn" type="primary" size="mini">登录</van-button>
-
       </van-col>
     </van-row>
   </div>
@@ -18,7 +20,12 @@
 
 <script>
 export default {
-  name: "IndexWrap"
+  name: "IndexWrap",
+  methods: {
+    searchBtnFn() {
+this.$router.push('/searchPage')
+    }
+  }
 }
 </script>
 
