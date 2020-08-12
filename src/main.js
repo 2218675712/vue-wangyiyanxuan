@@ -2,7 +2,22 @@ import Vue from 'vue'
 import router from './router'
 import store from './store'
 // 使用vant插件
-import {Button, Col, CountDown, Field, Grid, GridItem, Icon, Row, Swipe, SwipeItem, Tab, Tabs} from 'vant';
+import {
+    Button,
+    Col,
+    CountDown,
+    Field,
+    Grid,
+    GridItem,
+    Icon,
+    Row,
+    Swipe,
+    SwipeItem,
+    Tab,
+    Tabbar,
+    TabbarItem,
+    Tabs
+} from 'vant';
 // 引入适配js文件
 import './assets/js/rem'
 // 进入初始化css
@@ -25,7 +40,8 @@ Vue.use(SwipeItem);
 Vue.use(Grid);
 Vue.use(GridItem);
 Vue.use(CountDown);
-
+Vue.use(Tabbar);
+Vue.use(TabbarItem);
 Vue.use(VueAxios, axios)
 // axios 配置
 axios.defaults.timeout = 5000;  //设置超时时间

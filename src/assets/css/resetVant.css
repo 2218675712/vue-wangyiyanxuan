@@ -21,4 +21,15 @@
   width: 2.88rem;
   height: 2.88rem;
 }
+.footer_Div .van-tabbar {
+  height: 1.30667rem;
+}
+.footer_Div .van-tabbar .van-tabbar-item__text {
+  font-size: 0.32rem;
+}
+.footer_Div .van-icon {
+  width: 0.53333333rem;
+  height: 0.53333333rem;
+  font-size: 0.53333333rem;
+}
 /*# sourceMappingURL=resetVant.css.map */
