@@ -7,4 +7,18 @@
 .GoodsColumn_wrap .van-grid-item__text {
   font-size: 0.32rem;
 }
+.GoodList_wrap .van-grid-item__text {
+  font-size: 0.37333rem;
+}
+.GoodList_wrap .van-grid-item__icon {
+  width: 2.88rem;
+  height: 2.88rem;
+  background: #f5f5f5;
+  border-radius: 4px;
+  margin-bottom: 0.16rem;
+}
+.GoodList_wrap .van-grid-item__icon .van-icon__image {
+  width: 2.88rem;
+  height: 2.88rem;
+}
 /*# sourceMappingURL=resetVant.css.map */

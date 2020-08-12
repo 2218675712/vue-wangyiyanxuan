@@ -1,5 +1,6 @@
 <template>
   <div class="title-div">
+    <!--    搜索栏-->
     <van-row type="flex" justify="space-between" style="padding: 0 .2rem">
       <van-col span="6">
         <img class="logo" src="../assets/img/logo-img.png">
@@ -15,16 +16,18 @@
         <van-button class="loginBtn" type="primary" size="mini">登录</van-button>
       </van-col>
     </van-row>
+    <!--    标签栏-->
     <van-tabs v-model="active" swipeable class="tabBtnWrap">
       <van-tab v-for="(item,index) in tabBtnArr" :key="index" :title="item">
       </van-tab>
     </van-tabs>
+    <!--    轮播图-->
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="(item,index) in swipe_imgArr" :key="index">
         <img :src="item">
       </van-swipe-item>
-
     </van-swipe>
+    <!--    服务政策-->
     <div class="indexServicePolicy">
       <ul>
         <li><i style="background-image: url('http://yanxuan.nosdn.127.net/a03dd909803b9ac032eba58b7253a2f6.png');"></i>网易自营品牌
@@ -39,9 +42,30 @@
         </li>
       </ul>
     </div>
+    <!--    商品分类-->
     <div class="GoodsColumn_wrap">
       <van-grid :column-num="5">
         <van-grid-item v-for="(item,index) in goodsColumn_arr" :key="index" :icon="item.img_url" :text="item.img_txt"/>
+      </van-grid>
+    </div>
+    <!--    限时购-->
+    <div class="CountDownWrap">
+      <p>限时购</p>
+      <van-count-down :time="time_val" class="CountDownStyle">
+        <template v-slot="timeData">
+          <span class="time_block">{{ timeData.hours }}</span>
+          <span class="colon">:</span>
+          <span class="time_block">{{ timeData.minutes }}</span>
+          <span class="colon">:</span>
+          <span class="time_block">{{ timeData.seconds }}</span>
+        </template>
+      </van-count-down>
+      <a href="#" class="right">更多>></a>
+    </div>
+    <!--    限时购显示图-->
+    <div class="GoodList_wrap">
+      <van-grid :column-num="3">
+        <van-grid-item v-for="(item,index) in goodsListObj" :key="index" :icon="item.img_url" :text="item.img_txt"/>
       </van-grid>
     </div>
   </div>
@@ -89,7 +113,35 @@ export default {
           img_url: 'http://yanxuan.nosdn.127.net/12e8efd15b9b210ab156a7ee9b340548.gif',
           img_txt: '好货抄底'
         }
+      ],
+      time_val: 30 * 60 * 60 * 1000,
+      goodsListObj: [
+        {
+          img_url: 'https://yanxuan-item.nosdn.127.net/e78096b543cc65af16da3a93cacb4071.png?quality=75&type=webp&imageView&thumbnail=216x216',
+          img_txt: '￥219'
+        },
+        {
+          img_url: 'https://yanxuan-item.nosdn.127.net/570e762763536175b9ec226c0d93a7cd.png?quality=75&type=webp&imageView&thumbnail=216x216',
+          img_txt: '￥167'
+        },
+        {
+          img_url: 'https://yanxuan-item.nosdn.127.net/f3f18a4fe9e7905cd7c9ff28e42ff0c2.png?quality=75&type=webp&imageView&thumbnail=216x216',
+          img_txt: '￥50.2'
+        },
+        {
+          img_url: 'https://yanxuan-item.nosdn.127.net/0b05c22b99e8fc2cf3015e4bbb8d7c3f.png?quality=75&type=webp&imageView&thumbnail=216x216',
+          img_txt: '￥139'
+        },
+        {
+          img_url: 'https://yanxuan-item.nosdn.127.net/ec55e5314bfd670320c3c15ce5e0b095.png?quality=75&type=webp&imageView&thumbnail=216x216',
+          img_txt: '￥42.8'
+        },
+        {
+          img_url: 'https://yanxuan-item.nosdn.127.net/f815bf4d31ece0500089d69475c2014c.png?quality=75&type=webp&imageView&thumbnail=216x216',
+          img_txt: '￥249'
+        }
       ]
+
     }
   },
   created() {
@@ -164,6 +216,7 @@ export default {
     background-color: #39a9ed;
   }
 
+  //服务政策样式
   .indexServicePolicy {
     width: 100%;
 
@@ -195,6 +248,58 @@ export default {
     }
   }
 
+  //倒计时组件
+  .CountDownWrap {
+    //width: 100%;
+    height: 1.33333rem;
+    line-height: 1.33333rem;
+    padding: 0 .4rem;
+    //background: #fff;
+    overflow: hidden;
+
+    p {
+      float: left;
+      font-size: .42667rem;
+      line-height: 1.33333rem;
+
+    }
+
+    .right {
+      font-size: .37333rem;
+      float: right;
+      line-height: 1.33333rem;
+      color: #333333;
+    }
+
+    .CountDownStyle {
+      float: left;
+      margin-top: .4rem;
+      margin-left: .2rem;
+
+
+      .colon {
+        display: inline-block;
+        margin: 0 4px;
+        font-size: .37333rem;
+      }
+
+      .time_block {
+        display: inline-block;
+        width: .48rem;
+        height: .48rem;
+        line-height: .48rem;
+        color: #fff;
+        font-size: .32rem;
+        text-align: center;
+        background-color: #333;
+        border-radius: .05333rem;
+        //margin: .1rem .05rem 0 .05rem;
+        margin: 0 .05rem;
+      }
+    }
+
+
+  }
 
 }
 
