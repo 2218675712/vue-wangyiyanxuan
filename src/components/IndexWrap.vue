@@ -15,15 +15,33 @@
         <van-button class="loginBtn" type="primary" size="mini">登录</van-button>
       </van-col>
     </van-row>
+    <van-tabs v-model="active" swipeable class="tabBtnWrap">
+      <van-tab v-for="(item,index) in tabBtnArr" :key="index" :title="item">
+        内容 {{ item }}
+      </van-tab>
+    </van-tabs>
   </div>
 </template>
 
 <script>
+import '../assets/css/resetVant.less';
+
 export default {
   name: "IndexWrap",
+  data() {
+    return {
+      active: '',
+      tabBtnArr: ''
+    }
+  },
+  created() {
+    this.axios.get('get_tabBtn_list').then(_d => {
+      this.tabBtnArr = _d.data
+    })
+  },
   methods: {
     searchBtnFn() {
-this.$router.push('/searchPage')
+      this.$router.push('/searchPage')
     }
   }
 }
@@ -64,6 +82,11 @@ this.$router.push('/searchPage')
     background-color: #fff;
     margin-top: .1rem;
   }
+
+  .tabBtnWrap {
+    font-size: .35rem;
+  }
+
 }
 
 

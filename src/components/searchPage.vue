@@ -7,6 +7,7 @@
             v-model="search_Value"
             placeholder="好货内部价"
             @input="inputValFn"
+            @keyup.enter="submitFN"
         >
           <!--        搜索框放大镜Icon-->
           <template v-slot:left-icon>
@@ -26,7 +27,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
   name: "searchPage",
@@ -42,18 +42,32 @@ export default {
       this.isCloseShow = true
     }
   },
-  created() {
-    axios.get('http://localhost:3344/aa').then((res) => {
-      console.log(res)
-    })
-  },
   methods: {
+    /**
+     * watch监听
+     * @param _v 输入框值变化
+     */
     inputValFn(_v) {
       this.input_v = _v
     },
+    /**
+     * 清空搜索框
+     */
     clear_search_inputFn() {
       this.search_Value = ''
       this.isCloseShow = false
+    },
+    /**
+     * enter事件响应
+     */
+    submitFN() {
+      this.axios.get('search', {
+        params: {
+          search_key: this.input_v
+        }
+      }).then((res) => {
+        console.log(res.data)
+      })
     }
   }
 }
