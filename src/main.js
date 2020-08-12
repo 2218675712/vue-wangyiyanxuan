@@ -2,11 +2,12 @@ import Vue from 'vue'
 import router from './router'
 import store from './store'
 // 使用vant插件
-import {Button, Col, Field, Icon, Row, Tab, Tabs} from 'vant';
+import {Button, Col, Field, Grid, GridItem, Icon, Row, Swipe, SwipeItem, Tab, Tabs} from 'vant';
 // 引入适配js文件
 import './assets/js/rem'
 // 进入初始化css
 import './assets/css/reset.css'
+// 使用axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import App from './App.vue'
@@ -19,6 +20,10 @@ Vue.use(Icon);
 Vue.use(Field);
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(Swipe);
+Vue.use(SwipeItem);
+Vue.use(Grid);
+Vue.use(GridItem);
 
 Vue.use(VueAxios, axios)
 // axios 配置

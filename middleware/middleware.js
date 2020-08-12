@@ -50,6 +50,15 @@ app.get('/get_tabBtn_list', (req, res) => {
     let _d = ['推荐', '居家生活', '服饰鞋包', '美食酒水', '个护清洁', '母婴亲子', '运行旅行', '数码家电', '全球特色'];
     res.send(_d);
 });
+app.get('/get_swipe_img', (req, res) => {
+    let _n = [
+        'https://yanxuan.nosdn.127.net/43166261d4a7bba00b94739e71f75afb.jpg?type=webp&imageView&quality=75&thumbnail=750x0',
+        'https://yanxuan.nosdn.127.net/704515354b05480b4f6ef5ccd29c5778.jpg?type=webp&imageView&quality=75&thumbnail=750x0',
+        'https://yanxuan.nosdn.127.net/4b0e7635a97f1c3a93dbf52c01c331dc.jpeg?type=webp&imageView&quality=75&thumbnail=750x0',
+        'https://yanxuan.nosdn.127.net/0c2be1c0c4f5a73e67b2bab5d010ebd0.jpg?type=webp&imageView&quality=75&thumbnail=750x0'
+    ]
+    res.send(_n)
+})
 app.listen(3344, () => {
     console.log('高仿网易严选第二版，中间件，已经启动！')
     console.log('端口:3344')
