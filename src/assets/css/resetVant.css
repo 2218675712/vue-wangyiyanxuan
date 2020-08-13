@@ -32,4 +32,11 @@
   height: 0.53333333rem;
   font-size: 0.53333333rem;
 }
+.cateList .sidebarClass .van-sidebar-item__text {
+  font-size: 0.37333rem;
+  line-height: 0.66667rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333;
+}
 /*# sourceMappingURL=resetVant.css.map */

@@ -68,49 +68,18 @@
         <van-grid-item v-for="(item,index) in goodsListObj" :key="index" :icon="item.img_url" :text="item.img_txt"/>
       </van-grid>
     </div>
-    <!--  底部标签栏-->
-    <div class="footer_Div">
-      <van-tabbar v-model="footer_tab" active-color="#dd1a21">
-        <van-tabbar-item>
-          <span>首页</span>
-          <template #icon="props">
-            <div :class="props.active ? icon.a1 : icon.a"></div>
-          </template>
-        </van-tabbar-item>
-        <van-tabbar-item>
-          <span>分类</span>
-          <template #icon="props">
-            <div :class="props.active ? icon.b1 : icon.b"></div>
-          </template>
-        </van-tabbar-item>
-        <van-tabbar-item>
-          <span>值得买</span>
-          <template #icon="props">
-            <div :class="props.active ? icon.c1 : icon.c"></div>
-          </template>
-        </van-tabbar-item>
-        <van-tabbar-item>
-          <span>购物车</span>
-          <template #icon="props">
-            <div :class="props.active ? icon.d1 : icon.d"></div>
-          </template>
-        </van-tabbar-item>
-        <van-tabbar-item>
-          <span>我的</span>
-          <template #icon="props">
-            <div :class="props.active ? icon.e1 : icon.e"></div>
-          </template>
-        </van-tabbar-item>
-      </van-tabbar>
-    </div>
+    <!--底部组件-->
+    <Footer_bar></Footer_bar>
   </div>
 </template>
 
 <script>
 import '../assets/css/resetVant.less';
+import Footer_bar from "@/components/footer_bar";
 
 export default {
   name: "IndexWrap",
+  components: {Footer_bar},
   data() {
     return {
       top_tab: '',
@@ -176,19 +145,7 @@ export default {
           img_txt: '￥249'
         }
       ],
-      footer_tab: '',
-      icon: {
-        a: 'footerIcon footerIcon_1',
-        a1: 'footerIcon footerIcon_1_red',
-        b: 'footerIcon footerIcon_2',
-        b1: 'footerIcon footerIcon_2_red',
-        c: 'footerIcon footerIcon_3',
-        c1: 'footerIcon footerIcon_3_red',
-        d: 'footerIcon footerIcon_4',
-        d1: 'footerIcon footerIcon_4_red',
-        e: 'footerIcon footerIcon_5',
-        e1: 'footerIcon footerIcon_5_red',
-      }
+
     }
   },
   created() {
@@ -206,7 +163,7 @@ export default {
      * 跳转到搜索
      */
     searchBtnFn() {
-      this.$router.push('/searchPage')
+      this.$router.push('searchPage')
     }
   }
 }
@@ -347,54 +304,6 @@ export default {
 
   }
 
-  .footer_Div {
-    .footerIcon {
-      width: .53rem;
-      height: .53rem;
-      margin: 0 auto;
-      background-image: url('../assets/img/footer_icon.png');
-      background-size: .53rem;
-      background-repeat: no-repeat;
-      background-position: 0 0;
-    }
-
-    .footerIcon_1 {
-      background-position: 0 -250px;
-    }
-
-    .footerIcon_1_red {
-      background-position: 0 -200px;
-    }
-    .footerIcon_2 {
-      background-position: 0 -150px;
-    }
-
-    .footerIcon_2_red {
-      background-position: 0 -100px;
-    }
-    .footerIcon_3 {
-      background-position: 0 -350px;
-    }
-
-    .footerIcon_3_red {
-      background-position: 0 -300px;
-    }
-    .footerIcon_4 {
-      background-position: 0 -50px;
-    }
-
-    .footerIcon_4_red {
-      background-position: 0 0;
-    }
-    .footerIcon_5 {
-      background-position: 0 -450px;
-    }
-
-    .footerIcon_5_red {
-      background-position: 0 -400px;
-    }
-  }
 }
-
 
 </style>

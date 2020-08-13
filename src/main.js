@@ -11,6 +11,8 @@ import {
     GridItem,
     Icon,
     Row,
+    Sidebar,
+    SidebarItem,
     Swipe,
     SwipeItem,
     Tab,
@@ -42,6 +44,8 @@ Vue.use(GridItem);
 Vue.use(CountDown);
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
+Vue.use(Sidebar);
+Vue.use(SidebarItem);
 Vue.use(VueAxios, axios)
 // axios 配置
 axios.defaults.timeout = 5000;  //设置超时时间
