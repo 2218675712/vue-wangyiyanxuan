@@ -58,16 +58,23 @@ export default {
     }
   },
   mounted() {
-    // 拿到数据，转换类型
-    let _n = localStorage.getItem('save_index')
-    this.footer_tab = Number(_n)
+    /*    // 原始做法 拿到数据，转换类型
+        let _n = localStorage.getItem('save_index')
+        this.footer_tab = Number(_n)
+        */
+    this.footer_tab = this.$store.state.footer_tab
+
   },
   methods: {
-    //TODO 以后使用vuex完成
+    /*    原始做法
+        onFooterBtnChange(_inx) {
+          this.footer_tab = _inx
+          // 保存分类到数据本地存储
+          localStorage.setItem('save_index', _inx)
+        }*/
+    //使用vuex完成
     onFooterBtnChange(_inx) {
-      this.footer_tab = _inx
-      // 保存分类到数据本地存储
-      localStorage.setItem('save_index', _inx)
+      this.$store.dispatch("saveFooter_tab", _inx)
     }
   }
 }
