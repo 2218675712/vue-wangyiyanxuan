@@ -39,4 +39,41 @@
   white-space: nowrap;
   color: #333;
 }
+.goods_detail .GoodsAction .van-goods-action-button {
+  font-size: 0.37333rem;
+  height: 1.38667rem;
+}
+.goods_detail .GoodsAction .van-goods-action-icon,
+.goods_detail .GoodsAction .van-goods-action-icon__icon {
+  font-size: 0.37333rem;
+}
+.goods_detail .navBarClass .van-nav-bar {
+  height: 1.17333rem;
+}
+.goods_detail .navBarClass .van-nav-bar .van-nav-bar__title {
+  font-size: 0.5rem;
+}
+.goods_detail .skuClass .van-sku__price-symbol,
+.goods_detail .skuClass .van-sku__price-num,
+.goods_detail .skuClass .van-sku__stock,
+.goods_detail .skuClass .van-sku-header-item,
+.goods_detail .skuClass .van-sku-row__title,
+.goods_detail .skuClass .van-sku-row__image-item-name span,
+.goods_detail .skuClass .van-sku__stepper-title,
+.goods_detail .skuClass .van-cell--required::before,
+.goods_detail .skuClass .van-field__label,
+.goods_detail .skuClass .van-field__control {
+  font-size: 0.37333rem;
+}
+.goods_detail .skuClass .van-stepper__minus,
+.goods_detail .skuClass .van-stepper__plus,
+.goods_detail .skuClass .van-stepper__input {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+.goods_detail .skuClass .van-sku-actions .van-button {
+  font-size: 0.37333rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+}
 /*# sourceMappingURL=resetVant.css.map */

@@ -7,12 +7,17 @@ import {
     Col,
     CountDown,
     Field,
+    GoodsAction,
+    GoodsActionButton,
+    GoodsActionIcon,
     Grid,
     GridItem,
     Icon,
+    NavBar,
     Row,
     Sidebar,
     SidebarItem,
+    Sku,
     Swipe,
     SwipeItem,
     Tab,
@@ -46,6 +51,12 @@ Vue.use(Tabbar);
 Vue.use(TabbarItem);
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
+Vue.use(GoodsAction);
+Vue.use(GoodsActionButton);
+Vue.use(GoodsActionIcon);
+Vue.use(NavBar);
+Vue.use(Sku);
+
 Vue.use(VueAxios, axios)
 // axios 配置
 axios.defaults.timeout = 5000;  //设置超时时间

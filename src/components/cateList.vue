@@ -3,12 +3,18 @@
 <!--    侧边栏-->
     <div class="sidebarClass">
       <van-sidebar v-model="sidebarKey" @change="onChangeSidebar">
-        <van-sidebar-item v-for="(item,index) in sidebar_arr" :key="index" :title="item.txt"/>
+        <van-sidebar-item
+            v-for="(item,index) in sidebar_arr"
+            :key="index"
+            :title="item.txt"/>
       </van-sidebar>
     </div>
 <!--    右侧商品区-->
     <div class="sidebarGoods">
-      <div class="goodsItem" v-for="(n,index) in goodsListObj" :key="index">
+      <div class="goodsItem"
+           v-for="(n,index) in goodsListObj"
+           :key="index"
+      @click="gotoGoodsBuy(n)">
         <img :src="n.goods_img" alt="">
         <p>{{n.goods_name}}</p>
         <b>{{n.goods_price}}</b>
@@ -70,6 +76,18 @@ export default {
       this.axios.get('cate_goods_list_' + _inx).then(_d => {
         this.goodsListObj = _d.data
       })
+    },
+    /**
+     * 跳转商品页
+     */
+    gotoGoodsBuy(_n){
+      // 带参数路由跳转
+this.$router.push({
+  name:'goods_detail',
+  params:{
+    goods_info:_n
+  }
+})
     }
   }
 }

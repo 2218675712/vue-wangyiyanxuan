@@ -51,6 +51,7 @@
   }
 
 }
+
 //分类里面的侧边导航更改字体
 .cateList {
   .sidebarClass {
@@ -61,6 +62,61 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       color: #333;
+    }
+  }
+}
+
+//商品详情页
+.goods_detail {
+  //购买导航
+  .GoodsAction {
+    .van-goods-action-button {
+      font-size: .37333rem;
+      height: 1.38667rem;
+    }
+
+    .van-goods-action-icon, .van-goods-action-icon__icon {
+      font-size: .37333rem;
+
+    }
+
+  }
+
+  //顶部导航条
+  .navBarClass {
+    .van-nav-bar {
+      height: 1.17333rem;
+
+      .van-nav-bar__title {
+        font-size: .5rem;
+      }
+    }
+  }
+
+  //商品规格页
+  .skuClass {
+    .van-sku__price-symbol,
+    .van-sku__price-num,
+    .van-sku__stock,
+    .van-sku-header-item,
+    .van-sku-row__title,
+    .van-sku-row__image-item-name span,
+    .van-sku__stepper-title,
+    .van-cell--required::before,
+    .van-field__label,
+    .van-field__control {
+      font-size: .37333rem;
+    }
+
+    .van-stepper__minus, .van-stepper__plus,
+    .van-stepper__input {
+      width: .6rem;
+      height: .6rem;
+    }
+    .van-sku-actions .van-button{
+      font-size: 0.37333rem;
+      height: 1.2rem;
+      line-height: 1.2rem;
     }
   }
 }
