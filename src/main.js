@@ -23,7 +23,7 @@ import {
     Tab,
     Tabbar,
     TabbarItem,
-    Tabs
+    Tabs, Uploader
 } from 'vant';
 // 引入适配js文件
 import './assets/js/rem'
@@ -56,6 +56,8 @@ Vue.use(GoodsActionButton);
 Vue.use(GoodsActionIcon);
 Vue.use(NavBar);
 Vue.use(Sku);
+Vue.use(Uploader);
+
 
 Vue.use(VueAxios, axios)
 // axios 配置

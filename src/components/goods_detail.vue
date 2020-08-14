@@ -25,8 +25,14 @@
           :sku="sku"
           :goods="goods"
           goods-id="goodsId"
-          @buy-clicked="onBuyClicked"
-      />
+          @buy-clicked="onBuyClicked">
+        <template slot="sku-actions-top">
+          <div class="uploader-container">
+            <van-uploader v-model="fileList" :after-read="afterRead">
+            </van-uploader>
+          </div>
+        </template>
+      </van-sku>
     </div>
     <!--    购买导航-->
     <div class="GoodsAction">
@@ -60,6 +66,10 @@ export default {
       goods_img: '',
       goods_price: 0,
       show: false,
+      // 图片预览
+      fileList: [],
+      // 保存上传的图片信息
+      uploader_img_arr: [],
       goods: {
         // 默认商品 sku 缩略图
         picture: 'https://img.yzcdn.cn/1.jpg'
@@ -116,19 +126,19 @@ export default {
             s2: '3', // 规格类目 k_s 为 s2 的对应规格值 id
             price: 100, // 价格（单位分）
             stock_num: 110 // 当前 sku 组合对应的库存
-          },{
+          }, {
             id: 2260, // skuId
             s1: '2', // 规格类目 k_s 为 s1 的对应规格值 id
             s2: '3', // 规格类目 k_s 为 s2 的对应规格值 id
             price: 100, // 价格（单位分）
             stock_num: 110 // 当前 sku 组合对应的库存
-          },{
+          }, {
             id: 2261, // skuId
             s1: '1', // 规格类目 k_s 为 s1 的对应规格值 id
             s2: '4', // 规格类目 k_s 为 s2 的对应规格值 id
             price: 100, // 价格（单位分）
             stock_num: 110 // 当前 sku 组合对应的库存
-          },{
+          }, {
             id: 2262, // skuId
             s1: '2', // 规格类目 k_s 为 s1 的对应规格值 id
             s2: '4', // 规格类目 k_s 为 s2 的对应规格值 id
@@ -145,10 +155,10 @@ export default {
             // 商品留言
             datetime: '0', // 留言类型为 time 时，是否含日期。'1' 表示包含
             multiple: '0', // 留言类型为 text 时，是否多行文本。'1' 表示多行
-            name: '留言', // 留言名称
+            name: '留言1', // 留言名称
             type: 'text', // 留言类型，可选: id_no（身份证）, text, tel, date, time, email
             required: '1', // 是否必填 '1' 表示必填
-            placeholder: '' // 可选值，占位文本
+            placeholder: '请输入隐私信息' // 可选值，占位文本
           }
         ],
         hide_stock: false // 是否隐藏剩余库存
@@ -185,8 +195,11 @@ export default {
     /**
      * sky立即购买
      */
-    onBuyClicked(_skyData){
+    onBuyClicked(_skyData) {
       console.log(_skyData)
+    },
+    afterRead(_file) {
+      this.uploader_img_arr.push(_file)
     }
   }
 }
