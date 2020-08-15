@@ -4,6 +4,7 @@ import IndexWrap from "@/components/IndexWrap";
 import searchPage from "@/components/searchPage";
 import cateList from "@/components/cateList";
 import goods_detail from "@/components/goods_detail";
+import login from "@/components/login";
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,10 @@ const routes = [
         path: '/goods_detail',
         name: 'goods_detail',
         component: goods_detail,
+    }, {
+        path: '/login',
+        name: 'login',
+        component: login,
     }
 ]
 

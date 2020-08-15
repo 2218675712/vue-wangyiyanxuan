@@ -27,7 +27,7 @@
           <div :class="props.active ? icon.d1 : icon.d"></div>
         </template>
       </van-tabbar-item>
-      <van-tabbar-item>
+      <van-tabbar-item to="login">
         <span>我的</span>
         <template #icon="props">
           <div :class="props.active ? icon.e1 : icon.e"></div>

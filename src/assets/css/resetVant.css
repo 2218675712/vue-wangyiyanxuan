@@ -76,4 +76,20 @@
   height: 1.2rem;
   line-height: 1.2rem;
 }
+.login .navBarClass .van-nav-bar {
+  height: 1.17333rem;
+}
+.login .navBarClass .van-nav-bar .van-nav-bar__title {
+  font-size: 0.5rem;
+}
+.login .btnWrap .van-button {
+  height: 1.25333rem;
+  line-height: 1.25333rem;
+  margin-bottom: 0.42667rem;
+}
+.login .btnWrap .van-button .van-button__text,
+.login .btnWrap .van-button .van-icon {
+  font-size: 0.37333rem;
+  padding: 0 0.1rem;
+}
 /*# sourceMappingURL=resetVant.css.map */
